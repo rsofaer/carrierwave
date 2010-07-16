@@ -94,7 +94,8 @@ elsif defined?(Sinatra)
 end
 
 
-require 'carrierwave/orm/activerecord' if defined?(ActiveRecord)
-require 'carrierwave/orm/datamapper' if defined?(DataMapper)
-require 'carrierwave/orm/sequel' if defined?(Sequel)
-require 'carrierwave/orm/mongoid' if defined?(Mongoid)
+require File.join(File.dirname(__FILE__), "carrierwave", "orm", 'activerecord') if defined?(ActiveRecord)
+require File.join(File.dirname(__FILE__), "carrierwave", "orm", 'datamapper') if defined?(DataMapper)
+require File.join(File.dirname(__FILE__), "carrierwave", "orm", 'sequel') if defined?(Sequel)
+require File.join(File.dirname(__FILE__), "carrierwave", "orm", "mongoid") if defined?(Mongoid)
+require File.join(File.dirname(__FILE__), "carrierwave", "orm", "mongomapper") if defined?(MongoMapper)
